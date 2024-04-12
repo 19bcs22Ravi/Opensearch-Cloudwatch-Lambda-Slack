@@ -13,7 +13,7 @@ variable "engine_version" {
 variable "instance_type" {
   description = "The instance type for the OpenSearch cluster."
   type        = string
-  default     = "r6g.large.search"
+  default     = "r5.xlarge.search"
 }
 
 variable "tags" {
@@ -61,3 +61,17 @@ variable "worker_nodes" {
   type        = number
   default     = 1
 }
+
+########################################################################################################################################
+variable "vpc_id" {
+  description = "The ID of the VPC where the OpenSearch domain will be deployed."
+  type        = string
+  default = "vpc-0ac4fbae029ce587b"
+}
+
+variable "subnet_ids" {
+  description = "A list of subnet IDs within the VPC where OpenSearch nodes will be deployed."
+  type        = list(string)
+  default = [ "subnet-0cd236092a6928054" ]
+}
+

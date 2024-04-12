@@ -9,7 +9,13 @@ module "opensearch" {
   master_nodes      = var.master_nodes_needed ? var.master_nodes : 0
   worker_nodes      = var.worker_nodes_needed ? var.worker_nodes : 0
   tags              = var.tags
+  #####################################################################################################################################
+  vpc_id = var.vpc_id
+  subnet_ids        = var.subnet_ids
+
+    #####################################################################################################################################
 }
+
 
 output "opensearch_domain_id" {
   description = "The ID of the OpenSearch domain."
@@ -20,3 +26,5 @@ output "opensearch_endpoint" {
   description = "The endpoint URL of the OpenSearch domain."
   value       = module.opensearch.opensearch_endpoint
 }
+#########################################################################################################################################
+
